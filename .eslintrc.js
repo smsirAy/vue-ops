@@ -1,17 +1,24 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+      node: true
   },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
+      'plugin:vue/essential',
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+      parser: 'babel-eslint'
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
-  }
+      'lintOnSave': 'off',
+      // allow async-await
+      'generator-star-spacing': 'off',
+      // allow debugger during development
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'indent': 'off',
+      'no-unused-vars': 'off',
+      // 关闭语句强制分号结尾
+      "semi": [0],
+      "eol-last": 0, //文件以单一的换行符结束
+  },
 }
